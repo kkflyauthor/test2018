@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../dist/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../dist/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../dist/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="map" style="height:913px;"></div>
+		
+	</body>
+	<script type="text/javascript">
+		 // 地图
+        var map = echarts.init(document.getElementById('map'));
+        generateMap({
+            map: map,
+            name: '中国',
+            title: '全国地图大数据',
+            json:'../map_json/',
+            callback: function (p) {
+                map.on('click', function (p) {
+                    generateMap({
+                        map: map,
+                        name: p.name,
+                        json:'../map_json/',
+                    });
+                });
+            }
+        });
+	</script>
+</html>

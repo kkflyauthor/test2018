@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="../dist/css/swiper.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 10%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Swiper -->
+	<div class="swiper-container" id="swiper1" style="border:1px solid red;">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide">Slide 1</div>
+	      <div class="swiper-slide">Slide 2</div>
+	      <div class="swiper-slide">Slide 3</div>
+	      <div class="swiper-slide">Slide 4</div>
+	      <div class="swiper-slide">Slide 5</div>
+	      <div class="swiper-slide">Slide 6</div>
+	      <div class="swiper-slide">Slide 7</div>
+	      <div class="swiper-slide">Slide 8</div>
+	      <div class="swiper-slide">Slide 9</div>
+	      <div class="swiper-slide">Slide 10</div>
+	    </div>
+	  </div>
+
+	<div class="swiper-container" id="swiper2" style="border:1px solid red;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
+	
+	<div class="swiper-container" id="swiper3" style="border:1px solid red;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
+	
+	<div class="swiper-container" id="swiper4" style="border:1px solid red;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+    
+    <div class="swiper-button-prev"></div><!--左箭头-->
+    <div class="swiper-button-next"></div><!--右箭头-->
+    
+  </div>
+	
+	<div class="swiper-container" style="border:1px solid red;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
+	
+	<div class="swiper-container" style="border:1px solid red;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
+	
+	
+	
+  <!-- Swiper JS -->
+  <script src="../dist/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+  //initialSlide参数
+	//设定初始化时slide的索引。
+	//类型：number默认：0举例：2启用版本：4.0.0
+  
+	//direction
+	//	Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)。
+	//	direction参数
+	//	类型：string默认：horizontal举例：vertical启用版本：4.0.0
+  
+	//speed
+	//切换速度，即slider自动滑动开始到结束的时间（单位ms），也是触摸滑动时释放至贴合的时间。
+	//speed参数
+	//类型：number默认：300举例：1000启用版本：4.0.0
+  
+	//grabCursor
+	//设置为true时，鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状。（根据浏览器形状有所不同）
+	//grabCursor参数
+	//类型：boolean默认：false举例：true启用版本：4.0.0
+  
+	//setWrapperSize
+	//Swiper使用flexbox布局(display: flex)，开启这个设定会在Wrapper上添加等于slides相加的宽或高，在对flexbox布局的支持不是很好的浏览器中可能需要用到。
+	//setWrapperSize参数
+	//类型：boolean默认：false举例：true启用版本：4.0.0
+  
+    var swiper1 = new Swiper('#swiper1',{
+    	autoplay:true,    // 自动滑动  delay 默认是三秒  自己 看页面猜的
+    	initialSlide:1,
+    	direction:'vertical',
+    	speed:1000
+    });
+    
+    var swiper2 = new Swiper('#swiper2',{
+    	autoplay:{
+    		delay:3000
+    	},    // 自动滑动
+    	initialSlide:1,
+    	direction:'vertical',
+    	speed:1000
+    });
+    
+    
+    var swiper3 = new Swiper('#swiper3',{
+    	grabCursor:true,
+    	initialSlide:2,
+    	direction:'horizontal',  // horizontal
+    	speed:1000,
+    	setWrapperSize :true,
+    });
+    
+    //获取全部slide相加(wrapper)的宽度
+		console.log(swiper3.$wrapperEl.css('width'));
+    
+    var swiper4 = new Swiper('#swiper4',{
+    	 autoplay: {
+    	 		delay:1000,
+    	 		disableOnInteraction: false
+    	 },
+			 loop: true,
+    	 navigation: {
+	      nextEl: '.swiper-button-next',
+	      prevEl: '.swiper-button-prev',
+	    },
+    });
+    
+    
+    
+    
+  </script>
+</body>
+</html>

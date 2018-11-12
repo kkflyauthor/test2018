@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../dist/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body style="height: 100%; margin: 0">
+		<div style="width: 925px;height:363px;">
+			<div id="container" style="height: 100%"></div>
+		</div>
+			
+		
+		
+	</body>
+	<script type="text/javascript">
+		var dom = document.getElementById("container");
+		var myChart = echarts.init(dom);
+		var app = {};
+		option = null;
+		var posList = [
+			'left', 'right', 'top', 'bottom',
+			'inside',
+			'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+			'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+		];
+		
+		app.configParameters = {
+			rotate: {
+				min: -90,
+				max: 90
+			},
+			align: {
+				options: {
+					left: 'left',
+					center: 'center',
+					right: 'right'
+				}
+			},
+			verticalAlign: {
+				options: {
+					top: 'top',
+					middle: 'middle',
+					bottom: 'bottom'
+				}
+			},
+			position: {
+				options: echarts.util.reduce(posList, function(map, pos) {
+					map[pos] = pos;
+					return map;
+				}, {})
+			},
+			distance: {
+				min: 0,
+				max: 100
+			}
+		};
+		
+		app.config = {
+			rotate: 0,
+			align: 'left',
+			verticalAlign: 'middle',
+			position: 'top',
+			distance: 15,
+			onChange: function() {
+				var labelOption = {
+					normal: {
+						rotate: app.config.rotate,
+						align: app.config.align,
+						verticalAlign: app.config.verticalAlign,
+						position: app.config.position,
+						distance: app.config.distance
+					}
+				};
+				myChart.setOption({
+					series: [{
+						label: labelOption
+					}, {
+						label: labelOption
+					}, {
+						label: labelOption
+					}, {
+						label: labelOption
+					}]
+				});
+			}
+		};
+		
+		var labelOption = {
+			normal: {
+				show: true,
+				position: app.config.position,
+				distance: app.config.distance,
+				align: app.config.align,
+				verticalAlign: app.config.verticalAlign,
+				rotate: app.config.rotate,
+//				formatter: '{c}  {name|{a}}',
+				formatter: '{c}',   // {a}：系列名。{b}：数据名。{c}：数据值
+//				formatter: '{a}',   // 未完工 在建 完工 验收  
+//				formatter: '{b}',   // 华北 西南 西北 东北 华南
+				fontSize: 16,
+				rich: {
+					name: {
+						textBorderColor: '#fff'
+					}
+				}
+			}
+		};
+		
+		option = {
+			color: ['#003366', '#006699', '#4cabce', '#e5323e'],  // 颜色 
+			title: {  // 标题
+			    text: '可持续示范区建设项目实施进度统计图',
+			    x: 'center',
+			    textStyle: {
+			        color: 'blue',
+			        fontStyle: 'normal',
+			        fontWeight: 'normal',
+			    },
+			},
+			tooltip: { // 提示框 
+				trigger: 'axis', // 触发类型  axis是坐标轴触发
+				axisPointer: {   // 是配置坐标轴指示器的快捷方式
+//					type: 'shadow'
+					type: 'cross'
+				},
+				
+			},
+			legend: {  // 图例组件
+				data: ['未完工', '在建', '完工', '验收'],
+				bottom:10,
+				right:10,
+			},
+			toolbox: { // 工具栏
+				show: true,
+				orient: 'vertical',  // 布局朝向
+				left: 'right',  // 工具栏组件离容器左侧的距离。
+				top: 'center',  // 工具栏组件离容器上侧的距离。
+				feature: {      // 各工具配置项。
+					mark: {
+						show: true
+					},
+					dataView: {      // 数据视图工具，可以展现当前图表所用的数据，编辑后可以动态更新。
+						show: true,
+						readOnly: false,
+						title:'可以编辑数据'
+					},
+					magicType: {     // 动态类型切换
+						show: true,
+						type: ['line', 'bar', 'stack', 'tiled']
+					},
+					restore: {       // 配置项还原
+						show: true
+					},
+					saveAsImage: {   // 保存为 图像 
+						show: true
+					}
+				}
+			},
+			calculable: true,
+			xAxis: [{  // x轴
+				type: 'category',
+				axisTick: {
+					show: false
+				},
+				data: ['华北区', '西南区', '西北区', '东北区', '华南区'],
+				name:'各区域项目状态',
+				nameLocation:'center',
+				nameTextStyle:{
+					color:'black',
+					fontSize:20,
+				},
+				nameGap:30,
+			}],
+			yAxis: [{  // y轴
+				type: 'value',
+				name:'数量',
+				nameLocation:'center',
+				nameTextStyle:{
+					color:'black',
+					fontSize:20,
+				},
+				nameGap:30,   // 与坐标系的距离
+				nameRotate:0,
+			}],
+			series: [{
+				name: '未完工',
+				type: 'bar',
+				barGap: 0,
+				label: labelOption,
+				data: [1, 0, 1, 0, 0]
+			}, {
+				name: '在建',
+				type: 'bar',
+				label: labelOption,
+				data: [1, 1, 1, 0, 0]
+			}, {
+				name: '完工',
+				type: 'bar',
+				label: labelOption,
+				data: [2, 1, 2, 2, 0]
+			}, {
+				name: '验收',
+				type: 'bar',
+				label: labelOption,
+				data: [2, 0, 0, 0, 0]
+			}]
+		};
+		
+		if(option && typeof option === "object") {
+			myChart.setOption(option, true);
+		}
+		
+	</script>
+
+</html>

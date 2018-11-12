@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="../dist/css/swiper.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 10%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Swiper -->
+	<div class="swiper-container" style="border:1px solid red;">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide">Slide 1</div>
+	      <div class="swiper-slide">Slide 2</div>
+	      <div class="swiper-slide">Slide 3</div>
+	      <div class="swiper-slide">Slide 4</div>
+	      <div class="swiper-slide">Slide 5</div>
+	      <div class="swiper-slide">Slide 6</div>
+	      <div class="swiper-slide">Slide 7</div>
+	      <div class="swiper-slide">Slide 8</div>
+	      <div class="swiper-slide">Slide 9</div>
+	      <div class="swiper-slide">Slide 10</div>
+	    </div>
+	  </div>
+
+	<div class="swiper-container" style="border:1px solid red;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
+	
+	<div class="swiper-container" style="border:1px solid red;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
+	
+	<div class="swiper-container" style="border:1px solid red;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
+	
+	<div class="swiper-container" style="border:1px solid red;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
+	
+	
+	
+	
+  <!-- Swiper JS -->
+  <script src="../dist/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+  // new Swiper(swiperContainer, parameters)
+  // 用于初始化一个Swiper，返回初始化后的Swiper实例。
+  
+  // swiperContainer : Swiper容器的css选择器，HTMLElement or string，必选。例如“.swiper-container”。
+  //parameters : Swiper的个性化配置，object类型，可选。
+
+  //一个页面中引用多个Swiper，可以给每个容器加上ID或Class区分，要保留默认的类名swiper-container。
+  
+	//  HTML
+	//	<div class="swiper-container" id="swiper1">....<div>
+	//	<div class="swiper-container" id="swiper2">....<div>
+	//	<div class="swiper-container" id="swiper3">....<div>
+	//	JS
+	//	var swiper1 = new Swiper('#swiper1');
+	//	var swiper2 = new Swiper('#swiper2');
+	//	var swiper3 = new Swiper('#swiper3');
+  
+  
+    var swiper = new Swiper('.swiper-container',{
+    	autoplay:true    // 自动滑动
+    });
+  </script>
+</body>
+</html>
