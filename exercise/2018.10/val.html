@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-1.9.1.js"></script>
+		<script>
+			//
+			$(function() {
+				//val() 方法返回或设置被选元素的值。
+				$("button.a").click(function() {
+					$(":text").val("Hello World");
+				});
+				$("button.b").click(function() {
+					alert( $(":text").val() );
+				});
+				
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<button class="a">点击a</button>
+		<button class="b">点击b</button>
+		
+		<input type="text" />
+
+	</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>bootstrap-select</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-select.css"/>
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap-select.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		
+		<div style="width: 400px; height: 100px;padding: 10px;">
+			<select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple style="height: 34px;line-height: 34px;"
+				data-live-search="false" onchange="thead()">
+	            <option value="xmlxmc" selected = "selected">项目类型</option>
+	            <option value="fnum" selected = "selected">计划申报数</option>
+	            <option value="countproject" selected = "selected">已申报数</option>
+	            <option value="fromusername" selected = "selected">发起人</option>
+	        </select>
+		</div>
+		
+	</body>
+	
+	<script type="text/javascript">
+		
+		function thead(){
+			//alert(222);
+			var theadobj = $('#usertype').selectpicker('val'); //bootstrap-select自带找选中下拉值的方法
+			console.log(theadobj);
+			var value = $('#usertype').val();
+			console.log(value);
+		}
+		
+	</script>
+	
+</html>

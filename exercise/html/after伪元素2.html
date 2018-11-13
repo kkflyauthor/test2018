@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<!--  content 可取以下值    -->
+<style type="text/css">
+    /* 字符串  */
+	p::before {
+		content: "《";
+		color: blue;
+	}
+	
+	p::after {
+		content: "》";
+		color: blue;
+	}
+	
+	/* 通过attr()调用当前元素的属性，比如将图片alt提示文字或者链接的href地址显示出来。  */
+	a::after{
+	    content: "(" attr(href) ")";
+	}
+	
+	
+</style>
+<!--使用引号包一段字符串，将会向元素内容中添加字符串。如：a:after{content:""}-->
+<p>平凡的世界</p>
+
+<a href="http://www.cnblogs.com/starof">starof</a>
+
+
+
+
+
+

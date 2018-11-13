@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		Date.prototype.format = function (fmt) {
+	    /*
+	     * 使用例子:format="yyyy-MM-dd hh:mm:ss";
+	     */
+	    var o = {
+	        "M+": this.getMonth() + 1, // month
+	        "d+": this.getDate(), // day
+	        "h+": this.getHours(), // hour
+	        "m+": this.getMinutes(), // minute
+	        "s+": this.getSeconds(), // second
+	        "q+": Math.floor((this.getMonth() + 3) / 3), // quarter
+	        "S": this.getMilliseconds()
+	        // millisecond
+	    }
+	    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+	    for (var k in o)
+	        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+	    return fmt;
+	
+	}
+		
+		
+		var time = new Date()
+		console.log(time);
+		
+		console.log( time.format('yy-MM-dd hh:mm:ss') );
+		
+//		var times = new Date('Mon Oct 15 2018 09:51:38 GMT+0800 (中国标准时间)');
+//		console.log(times);
+//		
+//		var times2 = new Date('18-10-15 09:51:56')
+//		console.log(times2);
+//		
+//		console.log( new Date("January 12,2006 22:19:35") ); 
+	</script>
+</html>

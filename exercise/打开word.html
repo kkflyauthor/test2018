@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>打开word文档</title>
+	</head>
+	<body>
+		<a href="file:///F:\exercise\testword.docx"  onclick="openmydoc('file:///F:\\exercise\\testword.docx');" type="activxobject(word.application)">打开word文档1</a>
+		<a onclick="openmydoc('F:\\exercise\\testword.docx');" type="activxobject(word.application)">打开word文档2</a>
+	</body>
+	<script type="text/javascript">
+		
+		var xmlHttp；
+			//判断浏览器是否支持ActiveX控件
+		if(window.ActiveXObject){
+			//支持-通过ActiveXObject的一个新实例来创建XMLHttpRequest对象
+			//xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			function openmydoc(path){ 
+				var doc=new ActiveXObject("Word.Application"); 
+				doc.visible=true; 
+				doc.Documents.Open(path); 
+			} 
+		}
+		//不支持
+		else if(window.XMLHttpRequest){
+			xmlHttp = new XMLHttpRequest()
+			
+		}
+		
+		
+		
+		function openmydoc(path){ 
+			var doc=new ActiveXObject("Word.Application"); 
+			doc.visible=true; 
+			doc.Documents.Open(path); 
+		} 
+		
+	</script>
+</html>

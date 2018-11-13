@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<table border="" cellspacing="" cellpadding="">
+			<tr class="keyan1">
+	            <td> 1</td>
+	            <td rowspan="7"> 可研申报（7）</td>
+	            <td class="taleft" data-src="Project_basic_information_table.html"> 项目基本信息表</td>
+	            <td class="taleft"> 申报项目的相关基本情况</td>
+	            <td><span name="formcheck" value="1_1"/></td>
+	        </tr>
+	        <tr class="keyan2">
+	            <td> 2</td>
+	            <td class="taleft" data-src="ResearchApplication/developOrg.html"> 项目建设单位基本情况表</td>
+	            <td class="taleft"> 申报项目建设单位的相关基本情况</td>
+	            <td><span name="formcheck" value="1_2"/></td>
+	        </tr>
+		</table>
+		
+	</body>
+	<script type="text/javascript">
+//		console.log( $(".keyan1") );
+//		console.log( $(".keyan1").find('td').eq(0)[0] );
+//		console.log( $(".keyan1").find('td').eq(1)[0] );
+//		console.log( $(".keyan1").find('td').eq(2)[0] );
+//		console.log( $(".keyan1").find('td').eq(3)[0] );
+//		console.log( $(".keyan1").find('td').eq(4)[0] );
+		
+		var list = [0, 1, 2];
+		list.forEach(function (currentValue, index, arr) {
+            console.log($(".keyan2").find("td").eq(arr[index]));
+            $(".keyan2").find("td").eq(arr[index]).remove();
+        });
+		if ($(".keyan1").find("td").length == 5) list = [0, 2, 3];
+        list.forEach(function (currentValue, index, arr) {
+            console.log($(".keyan1").find("td").eq(arr[index]));
+            $(".keyan1").find("td").eq(arr[index]).remove();
+        });
+		//  这里的坑 是  每次删除一个节点后，其他节点的顺序会变
+	</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>按钮的向下向上三角形</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<style type="text/css">
+			body{margin:100px;padding:100px;}
+		</style>
+	</head>
+
+	<body>
+		
+		<!-- 有的时候我们的下拉菜单会向上弹起（接下来一个小节会介绍），这个时候我们的三角方向需要朝上显示，实现方法：
+			  需要在“.btn-group”类上追加“dropup”类名（这也是做向上弹起下拉菜单要用的类名）。 
+			  
+		-->
+		
+		<!--
+			    加上  dropup  下拉菜单会向上弹起
+			（当然，如果是普通向上弹出下拉菜单，你只需要在“dropdown”类名基础上追加“dropup”类名即可）。 
+		-->
+		
+		<div class="btn-group dropup">
+			<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">按钮下拉菜单
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li>
+					<a href="##">按钮下拉菜单项</a>
+				</li>
+				<li>
+					<a href="##">按钮下拉菜单项</a>
+				</li>
+				<li>
+					<a href="##">按钮下拉菜单项</a>
+				</li>
+				<li>
+					<a href="##">按钮下拉菜单项</a>
+				</li>
+			</ul>
+		</div>
+		<script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

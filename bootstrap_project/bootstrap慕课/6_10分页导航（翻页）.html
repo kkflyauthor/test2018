@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>分页导航（翻页分页导航）</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	</head>
+	
+	<body>
+		<!--代码-->
+		<ul class="pager">
+			<li>
+				<a href="#">&laquo;上一页</a>
+			</li>
+			<li>
+				<a href="#">下一页&raquo;</a>
+			</li>
+		</ul>
+		<!--左右对齐-->
+		<ul class="pager">
+			<li class="previous">
+				<a href="#">&laquo;上一页</a>
+			</li>
+			<li class="next">
+				<a href="#">下一页&raquo;</a>
+			</li>
+		</ul>
+		<!--禁止状态-->
+		<!-- 
+			和带页码分页导航一样，如果在li标签上添加了disabled类名的时候，分页按钮处于禁用状态，
+			 但同样不能禁止其点击功能。你可以通过js来处理，或将a标签换成span标签。 
+		-->
+		<ul class="pager">
+			<li class="disabled"><span>&laquo;上一页</span></li>
+			<li>
+				<a href="#">下一页&raquo;</a>
+			</li>
+		</ul>
+		<script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	</body>
+
+</html>

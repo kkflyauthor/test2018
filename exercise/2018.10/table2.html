@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="保存" id="save"/>
+		
+		<table border="1" cellspacing="1" cellpadding="1" class="abcd">
+                <tr>
+                    <td>
+                        <span class="del">-</span><span class="spanName">项目名称<input type="checkbox" name=""></span><span
+                            class="add">+</span>
+                    </td>
+                    <td>
+                        <span class="del">-</span><span class="spanName">主管单位<input type="checkbox" name=""></span><span
+                            class="add">+</span>
+                    </td>
+                    <td>
+                        <span class="del">-</span><span class="spanName">行业<input type="checkbox" name=""></span><span
+                            class="add">+</span>
+                    </td>
+                    <td>
+                        <span class="del">-</span><span class="spanName">投资方向<input type="checkbox" name=""></span><span
+                            class="add">+</span>
+                    </td>
+                    <td>
+                        <span class="del">-</span><span class="spanName">项目类型<input type="checkbox" name=""></span><span
+                            class="add">+</span>
+                    </td>
+                    <td>
+                        <span class="del">-</span><span class="spanName">项目子类型<input type="checkbox"
+                                                                                     name=""> </span><span
+                            class="add">+</span>
+                    </td>
+                    <td>
+                        <span class="del">-</span><span class="spanName">详细建设地点<input type="checkbox"
+                                                                                      name=""></span><span
+                            class="add">+</span></td>
+                    <td>
+                        <span class="del">-</span><span class="spanName">建设性质 <input type="checkbox"
+                                                                                     name=""></span><span
+                            class="add">+</span>
+                    </td>
+                    <td>
+                        <span class="del">-</span><span class="spanName">申报审批状态 <input type="checkbox"
+                                                                                       name=""></span><span class="add">+</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+            </table>
+        
+	</body>
+	<script src="../jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$("#save").click(function(){
+			
+			var str = '';
+			
+			$(".abcd").find(':checked').parent().each(function(){
+				
+				 str += $(this).text() + ',';	
+				
+			});
+			
+			str = str.substring(0,str.length-1);
+			
+			console.log(str);
+		})
+		
+		
+		
+	</script>
+	
+	
+</html>

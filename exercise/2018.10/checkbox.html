@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<input type="checkbox" id="check" name=""  id="" value="" />
+		
+		<input type="checkbox" value="0" name="a" >
+		
+		<input type="checkbox" value="0" name="a" >
+		<input type="checkbox" value="0" name="a" >
+		<input type="checkbox" value="0" name="a" >
+		<input type="checkbox" value="0" name="a" >
+		
+		<sapn id="huoqu">获取</span>
+	</body>
+	
+	<script type="text/javascript">
+		
+		$("#huoqu").click(function(){
+			$('input[type="checkbox"]').each(function(){
+				
+				console.log( $(this).prop("checked") );
+				
+			})
+		})
+		
+		
+//		$('#check').on('click',function(){
+//			
+//			console.log($(this).val())
+//			
+//		})
+//		
+//		$('#check2').on('click',function(){
+//			
+//			this.value = (this.value==0)?1:0
+//			
+//			console.log(this.value);
+//			
+//		})
+		
+		
+	</script>
+</html>

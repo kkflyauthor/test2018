@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用js数组或者json格式定义树</title>
+		<link rel="stylesheet" type="text/css" href="../jstree.css" />
+		<script src="../jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../jstree.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="container"></div>
+	</body>
+	<script type="text/javascript">
+		$('#container').jstree({ 'plugins':["wholerow","checkbox"],
+			'core': {
+				'data': [
+				{
+					"text": "Root node",
+					"children": [{
+						"text": "Child node 1"
+					}, {
+						"text": "Child node 2"
+					}],
+					"state":{"opened":true}
+					
+				}, {
+					"text": "第一级",
+					"children": [{
+						"text": "第二级","children":[{"text":'第三级',"children":[{"text":"第四级","state":{"selected":true},},"第四级"]}]
+					}, {
+						"text": "第二级"
+					}],
+					
+				},"第一级"   // 如果只有一个 text 属性  可以直接写 字符串而不写 对象
+				]
+			}
+		});
+	</script>
+
+</html>

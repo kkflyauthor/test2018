@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>bootstrap-select2</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-select.css"/>
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap-select.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		
+		<div style="width: 400px; height: 100px;padding: 10px;">
+			<h3>基础</h3>
+			<select class="selectpicker">
+			    <option value="1">广东省</option>
+			    <option value="2">广西省</option>
+			    <option value="3">福建省</option>
+			    <option value="4">湖南省</option>
+			    <option value="5">山东省</option>                            
+			</select>
+		</div>
+		<div style="width: 400px; height: 100px;padding: 10px;">
+			<h3>多选</h3>
+			<select class="selectpicker" multiple>
+			    <option value="1">广东省</option>
+			    <option value="2">广西省</option>
+			    <option value="3">福建省</option>
+			    <option value="4">湖南省</option>
+			    <option value="5">山东省</option>                            
+			</select>
+		</div>
+		<div style="width: 400px; height: 100px;padding: 10px;">
+			<h3>给组件加搜索功能</h3>
+			<select class="selectpicker" multiple data-live-search="true">
+			    <option value="1">广东省</option>
+			    <option value="2">广西省</option>
+			    <option value="3">福建省</option>
+			    <option value="4">湖南省</option>
+			    <option value="5">山东省</option>                            
+			</select>
+		</div>
+		<div style="width: 400px; height: 100px;padding: 10px;">
+			<h3>选项分组</h3>
+			<select class="form-control selectpicker" data-live-search="true" multiple>
+		        <optgroup label="广东省">
+	                <option value="1">广州市</option>
+	                <option value="2">深圳市</option>
+	                <option value="3">珠海市</option>
+		        </optgroup>   
+		        <optgroup label="广西">
+                    <option value="1">南宁市</option>
+                    <option value="2">柳州</option>
+                    <option value="3">桂林市</option>
+		        </optgroup>  
+			    <optgroup label="山东">
+                    <option value="1">烟台</option>
+                    <option value="2">青岛</option>
+                    <option value="3">济南</option>
+			    </optgroup>                          
+			</select>
+		</div>
+		<div style="width: 400px; height: 100px;padding: 10px;">
+			<h3>设置最多选中项为2个</h3>
+			<select class="selectpicker" multiple data-live-search="true" data-max-options="2">
+			    <option value="1">广东省</option>
+			    <option value="2">广西省</option>
+			    <option value="3">福建省</option>
+			    <option value="4">湖南省</option>
+			    <option value="5">山东省</option>                            
+			</select>
+		</div>
+		<div style="width: 800px; height: 100px;padding: 10px;">
+			<h3>缩略模式，比如当选中值大于3个的时候只显示选中项的个数，注意这个属性只对多选生效</h3>
+			<select class="selectpicker" multiple data-live-search="true" data-selected-text-format="count > 3">
+			    <option value="1">广东省</option>
+			    <option value="2">广西省</option>
+			    <option value="3">福建省</option>
+			    <option value="4">湖南省</option>
+			    <option value="5">山东省</option>                            
+			</select>
+		</div>
+		<div style="width: 400px; height: 100px;padding: 10px;">
+			<h3>显示带颜色的标签</h3>
+			<select class="form-control selectpicker" title="请选择省份" multiple>
+                <option data-content="<span class='label label-success'>广东省</span>">广东省</option>    
+                <option data-content="<span class='label label-info'>广西省</span>">广西省</option>  
+                <option data-content="<span class='label label-warning'>福建省</span>">福建省</option>  
+                <option data-content="<span class='label label-danger'>山东省</span>">山东省</option>                        
+			</select>
+		</div>
+		
+	</body>
+	
+	<script type="text/javascript">
+		
+	</script>
+	
+</html>

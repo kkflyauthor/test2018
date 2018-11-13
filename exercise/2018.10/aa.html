@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		function a(){
+		
+		  var first = 1;
+              var second = 1;
+              var third;
+               var n = 12; 
+            if(n>2){
+                for(var i = 0; i < n-2; i++){
+                    third = first + second;
+                    first = second;
+                    second = third;
+                }
+                return third;
+            }else{
+                return 1;
+            }
+        
+		}
+		
+		console.log(a());
+		
+	</script>
+</html>

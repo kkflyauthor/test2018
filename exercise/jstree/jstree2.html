@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用html标签定义树</title>
+		<link rel="stylesheet" type="text/css" href="../jstree.css" />
+		<script src="../jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../jstree.min.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<div id="container">
+			<ul>
+				<li data-jstree='{ "selected" : true, "opened" : true }'>Root node
+					<ul>
+						<li>Child node 1</li>
+						<li>Child node 2</li>
+					</ul>
+				</li>
+				<li>一级
+					<ul>
+						<li>二级</li>
+						<li>二级</li>
+						<li>二级
+							<ul>
+								<li >三级</li>
+								<li data-jstree='{ "selected" : true, "opened" : true }'>三级
+									<ul>
+										<li>四级</li>
+										<li>四级</li>
+										<li>四级
+											<ul>
+												<li>五级</li>
+												<li>五级</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script>
+			$(function() {
+				$('#container').jstree( { 'plugins':["checkbox"] } );
+			});
+			
+			
+		</script>
+
+	</body>
+
+</html>

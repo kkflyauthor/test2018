@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	
+	<script type="text/javascript">
+		var time = new Date();
+		
+		Date.prototype.mul = function(){
+			
+			console.log('我是Date封装出来的方法 ');
+			
+		}
+		
+		
+		time.mul();
+		
+		
+		Date.aaa = function(){
+			console.log("我是Date的方法");
+		}
+		
+		Date.aaa();
+		
+		console.log(typeof Date);  // Date 的类型是function
+		
+		
+	</script>
+</html>

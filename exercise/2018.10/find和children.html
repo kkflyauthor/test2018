@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-1.9.1.js"></script>
+		<script>
+		
+			//data() 方法向被选元素附加数据，或者从被选元素获取数据。
+			$(function(){
+				$("#btn1").click(function() {
+					
+					console.log( $("ul.a").find('li') );
+					// 后代元素
+				});
+				
+				$("#btn2").click(function() {
+					
+					console.log( $("ul.a").children() );
+					//子代元素
+				
+				});
+			})
+			
+		</script>
+	</head>
+
+	<body>
+		<button id="btn1">btn1</button>
+		<button id="btn2">btn2</button>
+		<div>
+			
+			<ul class="a">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>
+					<ul>
+						<li>A</li>
+						<li>B</li>
+						<li>C</li>
+					</ul>
+				</li>
+			</ul>
+		
+		</div>
+		
+	</body>
+
+</html>

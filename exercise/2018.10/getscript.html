@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-1.9.1.js"></script>
+		<script>
+			
+			$(function() {
+				
+				$("button").click(function() {
+					$.getScript("ceshi1.js",function(){
+						a("start_end_time13");
+					});
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<button id="btn1">btn1</button>
+		
+		<input type="text" data-name="start_end_time13" value="10"/>
+
+	</body>
+
+</html>

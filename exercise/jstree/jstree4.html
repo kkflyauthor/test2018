@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax定义树&用AJAX和lazy loading（懒加载）来定义树</title>
+		<link rel="stylesheet" type="text/css" href="../jstree.css" />
+		<script src="../jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../jstree.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="container"></div>
+	</body>
+	<script type="text/javascript">
+		
+		//  ajax定义树
+//				$('#container').jstree({
+//					'plugins': ["wholerow", "checkbox"],
+//					'core': {
+//						'data': {
+//							"url": "//www.jstree.com/fiddle/",
+//							//"dataType": "json" // needed only if you do not supply JSON headers
+//						}
+//					}
+//				});
+
+		//  用AJAX和lazy loading（懒加载）来定义树
+
+		//首先是data对象中的 "data" 配置选项. 在jQuery中, 
+		// 应该是string 或者object类型，而jstree拓展了一下，使其可以设置为function.
+		// 每一次jstree需要请求AJAX的时候，就会调用这个function，
+		//  并将正在打开的节点作为参数传给这个function   ，该方法的返回值作为AJAX的‘data’参数.
+		$('#container').jstree({
+			'core': {
+				'data': {
+					"url": "//www.jstree.com/fiddle/?lazy",
+					"data": function(node) {
+						return {
+							"id": node.id
+						};
+					}
+				}
+			}
+		});
+	</script>
+
+</html>

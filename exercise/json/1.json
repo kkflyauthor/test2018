@@ -1,0 +1,133 @@
+{
+	"data":{
+		"collectivity": [
+			{
+				"phase": "未开工",
+				"quantity": "0",
+				"finish_invest": "0",
+				"finish_localSupport": "0",
+				"finish_selfRaised": "0",
+				"finish_otherFunds": "0",
+				"feasible_invest": "0",
+				"feasible_localSupport": "0",
+				"feasible_otherFunds": "0",
+				"feasible_selfRaised": "0"
+			},
+			{
+				"phase": "在建",
+				"quantity": "0",
+				"finish_invest": "0",
+				"finish_localSupport": "0",
+				"finish_selfRaised": "0",
+				"finish_otherFunds": "0",
+				"feasible_invest": "0",
+				"feasible_localSupport": "0",
+				"feasible_otherFunds": "0",
+				"feasible_selfRaised": "0"
+			},{
+				"phase": "完工",
+				"quantity": "0",
+				"finish_invest": "0",
+				"finish_localSupport": "0",
+				"finish_selfRaised": "0",
+				"finish_otherFunds": "0",
+				"feasible_invest": "0",
+				"feasible_localSupport": "0",
+				"feasible_otherFunds": "0",
+				"feasible_selfRaised": "0"
+			},
+			{
+				"phase": "待验收项目",
+				"quantity": "0",
+				"finish_invest": "0",
+				"finish_localSupport": "0",
+				"finish_selfRaised": "0",
+				"finish_otherFunds": "0",
+				"feasible_invest": "0",
+				"feasible_localSupport": "0",
+				"feasible_otherFunds": "0",
+				"feasible_selfRaised": "0"
+			},{
+				"phase": "已验收项目",
+				"quantity": "0",
+				"finish_invest": "0",
+				"finish_localSupport": "0",
+				"finish_selfRaised": "0",
+				"finish_otherFunds": "0",
+				"feasible_invest": "0",
+				"feasible_localSupport": "0",
+				"feasible_otherFunds": "0",
+				"feasible_selfRaised": "0"
+			}
+		],
+		"trade": [
+			{
+				"trade_id": "",
+				"name": "科研教育",
+				"quantity": "0",
+				"notInService": "0",
+				"underConstruction": "0",
+				"completion": "0",
+				"forAcceptance": "0",
+				"acceptanceAnd": "0",
+				"finish_invest": "0",
+				"finish_localSupport": "0",
+				"finish_selfRaised": "0",
+				"finish_otherFunds": "0",
+				"feasible_invest": "0",
+				"feasible_localSupport": "0",
+				"feasible_selfRaised": "0",
+				"feasible_otherFunds": "0"
+			}
+			//...
+		],
+		"area" :[
+			{
+				"area_id": "",
+				"name": "北京",
+				"quantity": "0",
+				"notInService": "0",
+				"underConstruction": "0",
+				"completion": "0",
+				"forAcceptance": "0",
+				"acceptanceAnd": "0",
+				"finish_invest": "0",
+				"finish_localSupport": "0",
+				"finish_selfRaised": "0",
+				"finish_otherFunds": "0",
+				"feasible_invest": "0",
+				"feasible_localSupport": "0",
+				"feasible_selfRaised": "0",
+				"feasible_otherFunds": "0"
+			}
+			//...
+		],
+		"competentUnit": [
+			{
+				"competentUnit_id": "",
+				"name": "山东省农业厅",
+				"quantity": "0",
+				"notInService": "0",
+				"underConstruction": "0",
+				"completion": "0",
+				"forAcceptance": "0",
+				"acceptanceAnd": "0",
+				"finish_invest": "0",
+				"finish_localSupport": "0",
+				"finish_selfRaised": "0",
+				"finish_otherFunds": "0",
+				"feasible_invest": "0",
+				"feasible_localSupport": "0",
+				"feasible_selfRaised": "0",
+				"feasible_otherFunds": "0"
+			}
+			//...
+		]	
+	},
+	"centralBudgetInvest": "",
+	"type": "",
+	"area": "",
+	"year": "",
+	"code": "",
+	"msg": ""
+}

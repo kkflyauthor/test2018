@@ -1,0 +1,24 @@
+{
+	"name":{
+		"arr":[
+			{
+				"phase": "未开工",
+				"quantity": "0",
+				"finish_invest": "0",
+				"finish_localSupport": "0",
+				"finish_selfRaised": "0",
+				"finish_otherFunds": "0",
+				"feasible_invest": "0",
+				"feasible_localSupport": "0",
+				"feasible_otherFunds": "0",
+				"feasible_selfRaised": "0"
+			},
+			{
+			},
+			{
+			}
+			
+			
+		]
+	}
+}

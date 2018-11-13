@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p class="p">我是段落p</p>
+		<div style="width:300px;height:1px;border: 1px solid black;"></div>
+		<div id="box"></div>
+		<br/>
+		<input type="button" class="button" value="克隆"/>
+		<input type="button" class="button2" value="不克隆，直接追加"/>
+		
+	</body>
+	<script type="text/javascript">
+		
+		$(".button").click(function(){
+			
+		  $("#box").append($(".p").clone().removeClass('p'));
+			
+		});
+		
+		$(".button2").click(function(){
+			
+			$("#box").append($(".p"));
+			
+		})
+		
+		
+	</script>
+	
+	
+</html>

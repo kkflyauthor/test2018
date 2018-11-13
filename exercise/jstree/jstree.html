@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />-->
+
+		<link rel="stylesheet" type="text/css" href="../jstree.css" />
+		<script src="../jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../jstree.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<div id="jstree_demo_div"></div>
+
+		<button>OK</button>
+		<span>点击</span>
+	</body>
+	<script type="text/javascript">
+		//一般data从后台返回，调用这个方法显示视图
+		//  插件配置：'plugins':["wholerow","checkbox"] 表示在会显示复选框。
+		$('#jstree_demo_div').jstree({
+			'plugins': ["wholerow", "checkbox", 'dnd', 'contextmenu'],  // dnd 拖放功能
+			'core': {
+				'data': [{
+					"id": "ajson1",
+					"parent": "#",
+					"text": "Simple root node"
+				}, {
+					"id": "ajson2",
+					"parent": "#",
+					"text": "Root node 2",
+					'state': {
+						'selected': false
+					},
+				}, {
+					"id": "ajson3",
+					"parent": "ajson2",
+					"text": "Child 1"
+				}, {
+					"id": "ajson4",
+					"parent": "ajson2",
+					"text": "Child 2"
+				} ],
+				"multiple": true, // true 多选  false 单选
+				"check_callback": function(operation, node, parent, position, more) {
+					//alert('333');
+					if(operation === "copy_node" || operation === "move_node") {
+						if(parent.id === "#") {
+							return false; // prevent moving a child above or below the root
+						}
+						//alert(node.id);
+					}
+					return true; // allow everything else
+				}, // 允许修改
+			}
+		});
+
+		//  监听选择事件，方法返回一个data，为上面设置jstree显示的data
+		$('#jstree_demo_div').on("changed.jstree", function(e, data) {
+			console.log(data.selected); //  data.selected 是一个数组，它包含了所有选中的节点id (注意了, 如果你没有自定义节点的ID，这些ID是自动生成的).
+			console.log("----selected----");
+			if(data.selected.length != 0) {
+				console.log(data.instance.get_selected(true)[0]);
+				console.log(data.instance.get_selected(true)[0].text);
+				console.log(data.instance.get_node(data.selected[0]).text);
+				// data 参数对象中有个instance 的属性，这个属性代表了这棵树的实例对象。
+			}
+			
+			$('span').on('click', function() {
+				
+				console.log(data.instance.get_selected(true)[0].text);
+				
+			});
+	
+			
+		});
+
+		$('button').on('click', function() {
+
+			//  获取选中的列的对象用如下方法：
+			//  get_selected返回选中的列
+			//  如果只想返回ID，那么不用传true参数即可
+			//console.log('选中的行')
+			console.log( $('#jstree_demo_div').jstree().get_selected(true)[0].text );
+
+			var instance = $('#jstree_demo_div').jstree(true);
+			instance.deselect_all(); // 取消选定
+			//instance.select_node('ajson3');  // 参数是 id的值 
+			// 也可以这么写 
+			$('#jstree_demo_div').jstree("select_node", "ajson3");
+		
+		});
+		
+	</script>
+
+</html>

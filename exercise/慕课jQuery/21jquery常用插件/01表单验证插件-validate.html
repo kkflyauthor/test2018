@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<!-- xmlns 属性可以在文档中定义一个或多个可供选择的命名空间。该属性可以放置在文档内任何元素的开始标签中。
+		
+		该属性的值类似于 URL，它定义了一个命名空间，浏览器会将此命名空间用于该属性所在元素内的所有内容。 
+	
+	-->
+
+	<!--
+		例如，如果需要使用符合 XML 规范的 XHTML 文档，则应该在文档中的<html> 标签中至少使用一个 xmlns 属性，
+		
+		以指定整个文档所使用的主要命名空间：
+		
+		
+	-->
+
+	<head>
+		<title>表单验证插件</title>
+		<meta charset="UTF-8" />
+		<style type="text/css">
+			#divtest {
+				width: 282px;
+			}
+			
+			#divtest .title {
+				padding: 8px;
+				background-color: blue;
+				color: #fff;
+				height: 23px;
+				line-height: 23px;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			
+			#divtest .content {
+				padding: 8px 0px;
+				background-color: #fff;
+				font-size: 13px;
+			}
+			
+			#divtest .content .tip {
+				color: Red;
+				font-size: 12px;
+			}
+			
+			.fl {
+				float: left;
+			}
+			
+			.fr {
+				float: right;
+			}
+		</style>
+		<script type="text/javascript" src="http://www.imooc.com/data/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="http://www.imooc.com/data/jquery.validate.js"></script>
+		<!-- 中文信息包 -->
+		<script type="text/javascript" src="http://www.imooc.com/data/jquery.validate.messages_cn.js"></script>
+	</head>
+
+	<body>
+		<div xmlns="http://www.w3.org/1999/Math/MathMl">x3/x</div>
+		<form id="frmV" method="get" action="#">
+			<div id="divtest">
+				<div class="title">
+					<span class="fl">表单验证插件</span>
+					<span class="fr">
+                        <input id="btnSubmit" type="submit" value="提交" />
+                    </span>
+				</div>
+				<div class="content">
+					<span class="fl">邮箱：</span><br />
+					<input id="email" name="email" type="text" /><br />
+					<span class="tip" style="color:red;"></span>
+				</div>
+				<div class="content">
+					<span class="fl">数字：</span><br />
+					<input id="email" name="nums" type="text" /><br />
+					<span class="tipnum" style="color:red;"></span>
+				</div>
+			</div>
+		</form>
+
+		<script type="text/javascript">
+			$(function() {
+				$("#frmV").validate({
+					/*自定义验证规则*/
+					rules: {
+						email: {
+							required: true,
+							email: true
+						},
+						nums: {
+							required: true,
+							number: true
+						}
+					},
+					/*错误提示位置*/
+					errorPlacement: function(error, element) {
+						console.log(element);
+						console.log(element[0]);
+						console.log(element.attr("name"));
+
+						console.log(error);
+						//						error.appendTo(".tip");
+						error.appendTo(element.parent());
+					}
+				})
+			});
+		</script>
+	</body>
+
+</html>

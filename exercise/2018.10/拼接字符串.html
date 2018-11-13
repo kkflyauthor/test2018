@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var arr = ["children_tr_1"];
+		
+		var obj ={ 
+			name:'children_tr_1'
+		}
+		
+		var object2 = {
+			li:[{},{name:'children_tr_2'}]
+		}
+		
+		var html = `
+			<table>
+				<tr data-name="children">
+					<td data-name="${arr[0]}">1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+				<tr data-name="children">
+					<td data-name="${obj.name}">1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+				<tr data-name="atr_${object2.li[1].name}">
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+				
+			</table>
+			`
+	$("#box").append(html);
+	
+	</script>
+</html>
