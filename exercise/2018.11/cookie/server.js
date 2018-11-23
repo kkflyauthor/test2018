@@ -6,40 +6,17 @@ http.createServer(function (request,response){
 
     console.log("request come",request.url);
 
+    //const host = request.headers.host
+
     if(request.url === '/'){
         const html = fs.readFileSync('test.html','utf8')
         response.writeHead(200,{
-            "Content-Type":"text/html"
+            "Content-Type":"text/html",
+            "Set-Cookie":["id=123;max-age=2",'name=234;httpOnly']
         })
         response.end(html);
     }
-    if(request.url=== '/script.js'){
 
-        response.writeHead(200,{
-            "Content-Type":"text/javascript",
-            "Cache-Control":"max-age=200000,no-cache",
-            "Last-Modified":'123',
-            "Etag":"777"
-        })
-        const etag = request.headers["if-none-match"]
-        if(etag == '777'){
-            response.writeHead(304,{
-                "Content-Type":"text/javascript",
-                "Cache-Control":"max-age=200000,no-cache",
-                "Last-Modified":'123',
-                "Etag":"777"
-            })
-            response.end('123');
-        }else{
-            response.writeHead(200,{
-                "Content-Type":"text/javascript",
-                "Cache-Control":"max-age=200000,no-cache",
-                "Last-Modified":'123',
-                "Etag":"777"
-            })
-            response.end('console.log("script loaded")');
-        }
-    }
 
 }).listen(63343);
 

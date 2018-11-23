@@ -8,14 +8,23 @@ http.createServer(function (request,response){
 
     //const host = request.headers.host
 
-    if(request.url === '/'){
-        const html = fs.readFileSync('test.html','utf8')
-        response.writeHead(200,{
-            "Content-Type":"text/html",
-            "Set-Cookie":["id=123;max-age=2",'name=234;httpOnly']
-        })
-        response.end(html);
-    }
+
+        const html = fs.readFileSync('test.html','utf8');
+        const img = fs.readFileSync('test.png');
+
+        if(request.url === "/"){
+            response.writeHead(200,{
+                "Content-Type":"text/html",
+                "Connection":"close"
+            })
+            response.end(html);
+        }else{
+            response.writeHead(200,{
+                "Content-Type":"image/png",
+                "Connection":"close"
+            })
+            response.end(img);
+        }
 
 
 }).listen(63343);
