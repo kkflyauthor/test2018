@@ -17,7 +17,7 @@ http.createServer(function (request,response){
 
         response.writeHead(200,{
             "Content-Type":"text/javascript",
-            "Cache-Control":"max-age=200000,no-cache", // 使用no-cache 下次请求会像服务器验证
+            "Cache-Control":"max-age=200000,no-cache",
             "Last-Modified":'123',
             "Etag":"777"
         })
