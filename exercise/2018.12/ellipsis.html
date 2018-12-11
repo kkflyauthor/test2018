@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.9.1.js"></script>
+	<script src='jquery.ellipsis.js' ></script>
+	<style>
+		div {
+            font-size: 18px;
+            font-family: 'Microsoft YaHei';
+            overflow: hidden;
+            width: 200px;float:left;  
+            /* 如果块级元素的width属性设置为auto的话（如果不设置，默认是auto），块级元素的宽度等同于浏览器 窗口所显示的大小，也就是会尽可能占据可以占据的空间。
+            
+            但当width:auto的块级元素遇到浮动（float）之后，其宽度不再等同于根据浏览器 窗口所显示的大小，而是随着盒模型中的内容而产生变化，即width会根据元素里的内容尽可能小地占用空间 */
+            border: 1px solid red;
+            -ms-word-break: break-all;
+            word-break: break-all;
+        }
+
+	</style>
+</head>
+<body>
+	<div>
+            不自动加点不自动加点不自动加点不自动加点不自动加点不自动加点不自动加点不自动加点不自动加点不.自动加点不自动加点不自动加点不自动加点不自动加点不自,动加点不自动加点不自动加点不自动加点不自动加点不自动加点不自动加点。不自动加点不自动加点不自动加点不自动加点不自动加点不自动加点不自动加点
+    </div>
+
+</body>
+	
+	<script>
+		$('div').ellipsis({maxWidth:200,maxLine:3});
+
+	</script>
+
+</html>
