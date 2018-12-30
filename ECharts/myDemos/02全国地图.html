@@ -6,20 +6,31 @@
 		<script src="../dist/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../dist/echarts.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../dist/common.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../dist/dark.js" type="text/javascript" charset="utf-8"></script>
+
 	</head>
 	<body>
-		<div id="map" style="height:913px;"></div>
-		
+		<div id="map" style="height:600px;"></div>
+
+        <div id="map2" style="height:600px;"></div>
+		<button onclick="destory()">销毁实例</button>
+        <button onclick="getDestory()">获取后销毁实例</button>
+        <button onclick="getMap()">获取已注册的地图</button>
+
+
 	</body>
 	<script type="text/javascript">
 		 // 地图
-        var map = echarts.init(document.getElementById('map'));
+        // echarts.registerTheme('dark'); 
+        var map = echarts.init(document.getElementById('map'),'dark',{width:'800px',height:'600px'});
+        var map2 = echarts.init(document.getElementById('map2'),{width:'800px',height:'600px'});
         generateMap({
             map: map,
             name: '中国',
             title: '全国地图大数据',
             json:'../map_json/',
             callback: function (p) {
+                map.off('click');
                 map.on('click', function (p) {
                     generateMap({
                         map: map,
@@ -29,5 +40,50 @@
                 });
             }
         });
+
+        generateMap({
+            map: map2,
+            name: '中国',
+            title: '全国地图大数据',
+            json:'../map_json/',
+            callback: function (p) {
+                map2.off('click');
+                map2.on('click', function (p) {
+                    generateMap({
+                        map: map2,
+                        name: p.name,
+                        json:'../map_json/',
+                    });
+                });
+            }
+        });
+
+        map.group = 'group1';
+        map2.group = 'group1';
+
+        echarts.connect('group1');
+
+        //echarts.connect([map, map2]);
+        
+        setTimeout(function (){
+            window.onresize = function () {
+                //hwChart.resize();
+                //swChart.resize();
+                console.log(2222);
+                map.resize();
+            }   
+        },200)
+
+        function destory(){
+            echarts.dispose(map);
+        }
+        function getDestory(){
+            echarts.getInstanceByDom(document.getElementById('map2')).dispose(map2);
+        }
+        
+        function getMap(){
+            console.log(echarts.getMap('HK'));
+        }
+
 	</script>
 </html>

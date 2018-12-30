@@ -18,7 +18,8 @@ function generateMap(p) {
             show: true,
             x: 'left',
             y: 'center',
-            splitList: [{
+            splitList: [
+            {
                     start: 500,
                     end: 600
                 }, {
@@ -45,8 +46,8 @@ function generateMap(p) {
         series: [{
             name: '投资数量',
             type: 'map',
-            mapType: 'HK',
-            roam: true,
+            mapType: 'china',
+            roam: false,
             label: {
                 normal: {
                     show: true
@@ -57,14 +58,16 @@ function generateMap(p) {
             },
             data: p.data ? p.data : []
         }],
-
     };
     // 覆盖配置项
     if (p.option) $.extend(true, optionMap, p.option);
-    $.get((p.json?p.json:'../../map_json/') + placeName + '.json', function (geoJson) {
+    $.get((p.json?p.json:'../map_json/') + placeName + '.json', function (geoJson) {
         // 假数据
         var mapData = [];
-        $.each(geoJson.features, function (index, item) {
+        geoJson = JSON.parse(geoJson);
+        var arr = geoJson['features'];
+        
+        $.each(arr, function (index, item) {
             mapData.push({
                 name: item.properties.name,
                 value: randomData()
@@ -73,7 +76,14 @@ function generateMap(p) {
         optionMap.series[0].data = mapData;
 
         map.hideLoading();
-        echarts.registerMap('HK', geoJson);
+        echarts.registerMap('china', geoJson,{
+            '山西':{
+                left:50,
+                top: 30,
+                // 经度横跨的范围
+                width: 30,
+            }
+        });
         // 渲染地图
         map.setOption(optionMap, true);
         // 执行回调
